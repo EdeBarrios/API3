@@ -1,28 +1,15 @@
-import android.os.Bundle
-import android.util.Log
-import androidx.appcompat.app.AppCompatActivity
-import retrofit2.Call
-import retrofit2.Callback
-import retrofit2.Response
-import retrofit2.Retrofit
-import retrofit2.converter.gson.GsonConverterFactory
-import retrofit2.http.GET
-
-// Modelo de datos
 data class Producto(
     val nombre: String,
     val precio: Double,
     val imagen: String
 )
 
-// API Retrofit
 interface ApiService {
     @GET("b/MX0A")
     fun obtenerProductos(): Call<List<Producto>>
 }
 
 class MainActivity : AppCompatActivity() {
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
